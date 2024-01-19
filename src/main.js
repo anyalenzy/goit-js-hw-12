@@ -62,7 +62,8 @@ function createGallery(photos) {
     showErrormsg(
       'Sorry, there are no images matching your search query. Please try again!'
     );
-    loader.style.display = 'none';
+    searchInput.value = '';
+    // loader.style.display = 'none';
     return;
   }
   limit = photos.totalHits;
@@ -95,7 +96,7 @@ function createGallery(photos) {
     .join('');
   gallery.insertAdjacentHTML('beforeend', markup);
   form.reset();
-  loader.style.display = 'none';
+  //   loader.style.display = 'none';
   simpleGallery.refresh();
 }
 
