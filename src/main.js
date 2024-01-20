@@ -98,6 +98,7 @@ function createGallery(photos) {
     .join('');
   gallery.insertAdjacentHTML('beforeend', markup);
   checkLimit();
+  scrollPage();
   simpleGallery.refresh();
   form.reset();
 }
@@ -108,6 +109,15 @@ function checkLimit() {
     hideElem(loadMoreBtn);
   } else {
     showElem(loadMoreBtn);
+  }
+}
+
+function scrollPage() {
+  if (searchParams.page > 1) {
+    const rect = document
+      .querySelector('.gallery-item')
+      .getBoundingClientRect();
+    window.scrollBy({ top: rect.height * 2, left: 0, behavior: 'smooth' });
   }
 }
 
