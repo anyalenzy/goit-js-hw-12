@@ -81,6 +81,9 @@
 .btn:focus {
   background: #6c8cff;
 }
+.load-more-btn {
+  display: none;
+}
 
 .gallery {
   width: 1128px;
